@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Employee</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <section class="section">
+        <div class="title is-2 has-text-centered">Edit Employee</div>
+      </section>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <form
+            class="field"
+            action="/employees/update/<%= id %>"
+            method="post"
+          >
+            <label class="label">Name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                name="name"
+                value="<%= name %>"
+                autocomplete="off"
+                placeholder="Name"
+              />
+            </div>
+            <div class="field is-grouped mt-5 is-justify-content-center">
+              <div class="control">
+                <button type="submit" class="button is-link" value="Add">
+                  Submit
+                </button>
+              </div>
+              <a href="/employees/" class="button">Back</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

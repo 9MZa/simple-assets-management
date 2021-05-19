@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <title>Borrow</title>
+  </head>
+  <body>
+    <section class="hero is-primary is-small mb-6">
+      <div class="hero-body">
+        <h1 class="title is-2 has-text-centered">Borrowing Record</h1>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="navbar-end mb-3">
+        <a href="/borrows/add" class="button is-normal is-primary"> Add </a>
+      </div>
+      <% if(data.length) { %>
+      <table class="table is-hoverable is-fullwidth">
+        <thead>
+          <tr class="has-text-centered">
+            <th class="">No</th>
+            <th class="">Date Time</th>
+            <th class="">Asset ID</th>
+            <th class="">Item name</th>
+            <th class="">Type</th>
+            <th class="">Employee</th>
+            <th class="">Staff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let i = 0; i < data.length; i++) { %>
+          <tr class="has-text-centered">
+            <td class=""><%= data[i].id %></td>
+            <td class=""><%= data[i].date_time %></td>
+            <td class=""><%= data[i].asset_id %></td>
+            <td class=""><%= data[i].item %></td>
+            <td class=""><%= data[i].type %></td>
+            <td class=""><%= data[i].employee %></td>
+            <td class=""><%= data[i].staff %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+    <div class="container">
+      <% if (!data.length) { %>
+      <article class="message is-info">
+        <div class="message-body has-text-centered">No data in row.</div>
+      </article>
+      <% } %>
+    </div>
+    <div class="container mt-5">
+      <div class="has-text-centered">
+        <a href="/" class="button is-link"> Home </a>
+      </div>
+    </div>
+  </body>
+</html>
