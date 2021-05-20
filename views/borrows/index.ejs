@@ -44,7 +44,8 @@
         <tbody>
           <% for(let i = 0; i < data.length; i++) { %>
           <tr class="has-text-centered">
-            <td class=""><%= data[i].id %></td>
+            <!-- <td class=""><%= data[i].id %></td> -->
+            <td class=""><%= data.length-data.length+i+1 %></td>
             <td class=""><%= data[i].asset_id %></td>
             <td class=""><%= data[i].employee_id %></td>
             <td class=""><%= data[i].staff_id %></td>
